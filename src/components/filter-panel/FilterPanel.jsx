@@ -65,9 +65,17 @@ export const FilterPanel = ({ isLoading, filters, setFilters }) => {
         price: debouncedPrice,
         sortBy,
       };
-      requestIdleCallback(() => {
-        localStorage.setItem('filters', JSON.stringify(updatedFilters));
-      });
+      // iOS does not support requestIdleCallback
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          localStorage.setItem('filters', JSON.stringify(updatedFilters));
+        });
+      } else {
+        // Fallback to setTimeout with minimal delay
+        setTimeout(() => {
+          localStorage.setItem('filters', JSON.stringify(updatedFilters));
+        }, 1);
+      }
       return updatedFilters;
     });
   }, [

@@ -57,6 +57,9 @@ select {
   border-radius: 5px;
   color: #ccc;
   padding: 7px 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   &:focus {
     outline: none;
@@ -79,25 +82,11 @@ input[type='range'] {
   padding: 8px 0;
 }
 
-/* Brand filter styles */
 .brandFilter {
   display: flex;
   flex-direction: column;
 }
 
-/* Categories filter styles */
-.categoryFilter {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Rating filter styles */
-.ratingFilter {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Price range filter styles */
 .priceRangeFilter {
   position: relative;
   display: flex;
@@ -115,8 +104,23 @@ input[type='range'] {
   }
 }
 
-/* Sort by filter styles */
+.categoryFilter,
+.ratingFilter,
 .sortFilter {
+  position: relative;
   display: flex;
   flex-direction: column;
+
+  ::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #ccc;
+    pointer-events: none;
+  }
 }
