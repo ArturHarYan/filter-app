@@ -1,0 +1,122 @@
+.panel {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 5px;
+  width: 100%;
+
+  @media (max-width: 785px) {
+    display: none;
+  }
+}
+
+.mobilePanel {
+  display: none;
+  width: 100%;
+  justify-content: flex-end;
+
+  @media (max-width: 785px) {
+    display: flex;
+  }
+
+  .filterIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .mobileControlsWrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    transform: translateX(calc(100% + 25px));
+    top: 125px;
+    width: min(500px, calc(100% - 48px));
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    padding: 25px 15px;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  border: none;
+  background-color: #4b4a4a;
+  border-radius: 5px;
+  color: #ccc;
+  padding: 7px 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  border: none;
+  background-color: #4b4a4a;
+  border-radius: 5px;
+  color: #ccc;
+  padding: 8px 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type='range'] {
+  padding: 8px 0;
+}
+
+/* Brand filter styles */
+.brandFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Categories filter styles */
+.categoryFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rating filter styles */
+.ratingFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Price range filter styles */
+.priceRangeFilter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 0;
+  }
+
+  span {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Sort by filter styles */
+.sortFilter {
+  display: flex;
+  flex-direction: column;
+}

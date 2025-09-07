@@ -1,0 +1,37 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(214, 213, 213, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(134, 133, 133);
+}
+
+.price {
+  color: #2196f3;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: rgb(95, 92, 92);
+  font-weight: 500;
+}

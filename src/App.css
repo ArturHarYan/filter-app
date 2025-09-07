@@ -1,0 +1,10 @@
+.appWrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 15px 25px;
+}
